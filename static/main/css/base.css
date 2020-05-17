@@ -1,0 +1,9 @@
+.alert-fixed {
+    display: none;
+    position:fixed; 
+    bottom: 10px; 
+    right: 10px; 
+    width: 40%;
+    z-index:9999; 
+    border-radius:0px
+}

@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+      <div  class='container'>
+        
+        <div class='text-center'>
+          <br>
+          <h1>PDF Reader</h1>
+        </div>
+        <button title ='Lista de formularios' class="btn btn-secondary form-group center-block text-center" onclick='listDocuments();'>
+          <i class="fas fa-arrow-circle-left fa-1x" aria-hidden="true"></i>
+        </button>
+        <br>
+        <form method="post" action="{% url 'pdf_reader_save' %} " enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="pdf" name="pdf" accept="application/pdf" lang="es" onchange="setNameFile(this);" required>
+            <label class="custom-file-label" for="pdf">Seleccionar Archivo</label>
+          </div>
+          <br><br>  
+          <button class="btn btn-primary  float-right" type="submit">Guardar</button>
+        </form>
+        <script>
+        </script>
+{% endblock %}

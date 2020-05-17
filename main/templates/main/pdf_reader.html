@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %}
+
+{% block body %}
+      <div  class='container'>
+        
+        <div class='text-center'>
+          <br>
+          <h1>Documentos</h1>
+        </div>
+        <button title ='Nuevo' class="btn btn-success form-group center-block text-center" onclick='newReader();'>
+          <i class="fas fa-plus-square fa-1x" aria-hidden="true"></i> 
+        </button> 
+        <table id='table'class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">FECHA</th>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">ESTADO</th>
+              <th scope="col" >OPCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for file in files %}
+              <tr>
+                <td >{{ file.id }}</td>
+                <td >{{ file.date }}</td>
+                <td >{{ file.user_name }}</td>
+                <td >{{ file.status }}</td>
+                <td > 
+                  <button title ='Descargar' class="btn btn-danger form-group center-block text-center" onclick='downloadPDF("{{ file.internal_name }}");'>
+                    <i class="far fa-file-pdf fa-1x" aria-hidden="true"></i> 
+                  </button> 
+                  {% if  file.report_internal_name != '' %}
+                    <button title ='Descargar' class="btn btn-primary form-group center-block text-center" onclick='downloadWord("{{ file.report_internal_name }}");'>
+                      <i class="far fa-file-word fa-1x" aria-hidden="true"></i> 
+                    </button> 
+                  {% endif %}
+                </td>
+                
+              </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+        <div id='registro-modal' class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Informacion Documento</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-info" data-dismiss="modal">Entendido</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <script>
+          var BASE_POOL_PDF = "{{ base_pool_pdf }}"
+          var BASE_POOL_WORD = "{{ base_pool_word }}"
+        </script>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+{% load static %}
+<html>
+    <head>
+        <script src="/static/main/js/jquery.min.js"></script>
+        <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">        
+        <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/static/addons/css/datatables.min.css">
+        <script src="/static/addons/js/datatables.min.js"></script>
+
+        <link rel="stylesheet" href="/static/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="/static/fontawesome/css/regular.min.css">
+        <link rel="stylesheet" href="/static/fontawesome/css/solid.min.css">
+        
+        
+        
+        <script src="/static/main/js/base.js"></script>
+        <link href="/static/main/css/base.css" rel="stylesheet" type="text/css" media="all">
+        <script src="/static/main/js/{{vista}}.js"></script>
+        <link href="/static/main/css/{{vista}}.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body class='bg-light'>
+        
+        {% csrf_token %}
+        {% block body %}
+        {% endblock %}	
+        
+        <div id='success-alert' class="alert alert-fixed alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p id='alert-text'></p>
+        </div>
+        <div id='error-alert' class="alert alert-fixed alert-danger" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p id='alert-text'></p>
+        </div>
+        <div id='info-alert' class="alert alert-fixed alert-info" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p id='alert-text'></p>
+        </div>
+        {% if messages %}
+        
+        {% endif %}
+        <script>
+          
+        </script>
+    </body>
+</html>
