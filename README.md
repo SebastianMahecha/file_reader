@@ -1,6 +1,6 @@
 # FILE READER
 
-##Pasos para la instalacion del proyecto
+## Pasos para la instalacion del proyecto
 
 1. Verificar si tienes instalado python3, si no entonces por favor instalalo.
 2. Instalar pip
@@ -11,12 +11,12 @@
 5. Activar virtualenv
 	`cd httest`
 	`source bin/activate`
-    
-6. Crear fork desde este repositorio
+
+6. Crear fork desde este repositorio (Si lo deseas y quieres contribuir)
 
 7. En tu local, instalar git en caso no tenerlo.
 
-8. Clonar el proyecto desde tu fork
+8. Clonar el proyecto desde tu fork o desde este repositorio
 	`git clone git@github.org:{USERNAME}/file_reader.git`	
 9. Ir a la base del proyecto, en donde se encuentra el archivo manage.py
 	`cd httest/file_reader`
