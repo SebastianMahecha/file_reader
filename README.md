@@ -32,6 +32,7 @@
 	`python manage.py runserver`
 15. Ya podras visualizar la pagina desde el navegador con la url arrojada por el anterior comando.
 
+16. En la raiz del proyecto se encuentran las cedulas con las que se realizaron las pruebas.
 
 	
 
